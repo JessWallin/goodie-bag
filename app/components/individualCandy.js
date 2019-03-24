@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { singleCandy } from './singleCandy';
 
 const IndividualCandies = props => {
   return (
     <div>
-      <img className="candyImage" src={props.candy.imageUrl} />
+      <Link to={`/candies/${props.candy.id}`} component={singleCandy}>
+        <img className="candyImage" src={props.candy.imageUrl} />
+      </Link>
       <h2>{props.candy.name} </h2>
       <p>Current Quantity:{props.candy.quantity} </p>
     </div>

@@ -6,6 +6,7 @@ import store from './store';
 import Root from './components/root';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Nav from './components/nav';
+import SingleCandy from './components/singleCandy';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -13,7 +14,8 @@ ReactDOM.render(
       <div>
         <Nav />
         <Route exact path="/" component={Root} />
-        <Route path="/candies" component={CandyList} />
+        <Route exact path="/candies" component={CandyList} />
+        <Route path="/candies/:id" component={SingleCandy} />
       </div>
     </Router>
   </Provider>,

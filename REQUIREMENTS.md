@@ -26,9 +26,10 @@ Remember to commit early and often as you're working!
 
 If you finish the above 'get all candies' functionality, feel free to branch out and add some more functionality! Here's some suggestions:
 
-- Get single candy
-  - Navigating to `/candies/:id` will display all detail about that candy
-  - Clicking on a candy in the all-candies view will navigate to that candy's single view
+x- Get single candy
+x- Navigating to `/candies/:id` will display all detail about that candy
+x- Clicking on a candy in the all-candies view will navigate to that candy's single view
+
 - Update candy quantity
   - The single candy view has 2 buttons, to increase or decrease that candy's quantity
 - Go wild on the UI!
