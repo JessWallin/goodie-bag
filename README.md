@@ -23,19 +23,19 @@ For this project, you must use Express to handle HTTP requests and Sequelize to 
 
 For the requirements, refer to the following file:
 
-* `REQUIREMENTS.md` - contains the functional requirements of the project
+- `REQUIREMENTS.md` - contains the functional requirements of the project
 
 Make sure to read them carefully!
 
 ## Other Important Info
 
 ### How to test functionality without a frontend
+
 - GET: use your browser
 - POST / PUT / DELETE :
- - CLI (command line interface) with `curl`
-   - e.g. `curl -H "Content-Type: application/json" -X POST -d '{"username":"kate","password":"1234"}' http://localhost:3000/api/login`
-   - `-H`: headers. `-X`: verb. `-d`: data (must be of the type specified in headers). http://[address]:[port]/[route_path]
- - [Postman](https://www.getpostman.com/)
-   ![](https://www.dropbox.com/s/4fk3b90cd0i1a5y/postman_post.png?raw=true)
+- CLI (command line interface) with `curl`
+  - e.g. `curl -H "Content-Type: application/json" -X POST -d '{"username":"kate","password":"1234"}' http://localhost:3000/api/login`
+  - `-H`: headers. `-X`: verb. `-d`: data (must be of the type specified in headers). http://[address]:[port]/[route_path]
+- [Postman](https://www.getpostman.com/)
+  ![](https://www.dropbox.com/s/4fk3b90cd0i1a5y/postman_post.png?raw=true)
 - Databases: use Sequelize in your routes and see if you are receiving what you expect
-

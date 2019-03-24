@@ -9,7 +9,7 @@
 }
 
 body::after {
-  content: "";
+  content: '';
   background: url('bg.jpg');
   opacity: 0.1;
   top: 0;
@@ -29,9 +29,23 @@ nav {
   padding: 10px;
 }
 
+a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 main {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.candyImage {
+  width: 25%;
 }
