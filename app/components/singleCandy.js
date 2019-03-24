@@ -1,5 +1,5 @@
 import React from 'react';
-import { getSingleCandy } from '../reducers/index';
+import { getSingleCandy, addMoreCandy, takeLessCandy } from '../reducers/index';
 import { connect } from 'react-redux';
 
 class SingleCandy extends React.Component {
@@ -20,16 +20,36 @@ class SingleCandy extends React.Component {
           <h1>{this.props.selectedCandy.name}</h1>
           <h4>{this.props.selectedCandy.description}</h4>
           <p>Quantity: {this.props.selectedCandy.quantity} </p>
+          <button
+            type="button"
+            onClick={() => this.props.getMoreCandy(this.props.selectedCandy)}
+          >
+            Add More!
+          </button>
+          <button
+            type="button"
+            onClick={() => this.props.takeLessCandy(this.props.selectedCandy)}
+          >
+            Take Less!
+          </button>
         </div>
       );
     }
   }
 }
 
+// const thisCandy = this.props.selectedCandy;
+
 const mapDispatchToProps = dispatch => ({
   getSingleCandy: function(id) {
     console.log('getSingleCandy');
     dispatch(getSingleCandy(id));
+  },
+  getMoreCandy: function(thisCandy) {
+    dispatch(addMoreCandy(thisCandy));
+  },
+  takeLessCandy: function(thisCandy) {
+    dispatch(takeLessCandy(thisCandy));
   },
 });
 

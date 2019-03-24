@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../database');
 
-module.exports = db.define('candy', {
+const Candy = db.define('candy', {
   name: {
     type: Sequelize.STRING,
     allowEmpty: false,
@@ -24,3 +24,13 @@ module.exports = db.define('candy', {
       'https://target.scene7.com/is/image/Target/GUEST_9766bfa7-3fcb-4f4c-9576-15e17ccc1044?wid=488&hei=488&fmt=pjpeg',
   },
 });
+
+Candy.prototype.increment = function() {
+  return this.increment('quantity');
+};
+
+Candy.prototype.decrement = function() {
+  return this.decrement('quantitiy');
+};
+
+module.exports = Candy;

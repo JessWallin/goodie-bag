@@ -37,20 +37,30 @@ export const getSingleCandy = id => {
   };
 };
 
-export const moreCandy = id => ({
+export const moreCandy = more => ({
   type: MORE_CANDY,
-  id,
+  more,
 });
 
-export const lessCandy = id => ({
+export const lessCandy = less => ({
   type: LESS_CANDY,
-  id,
+  less,
 });
 
-export const addMoreCandy = id => {
+export const addMoreCandy = candy => {
+  const newQuantity = candy.quantity + 1;
   return async dispatch => {
-    await Axios.put(`api/candy${id}`, { quantity: 0 });
-    dispatch(moreCandy(id));
+    await Axios.put(`api/candy/${candy.id}`, { quantity: newQuantity });
+    console.log(newQuantity);
+    dispatch(moreCandy(newQuantity));
+  };
+};
+
+export const takeLessCandy = candy => {
+  const newQuantity = candy.quantity - 1;
+  return async dispatch => {
+    await Axios.put(`api/candy/${candy.id}`, { quantity: newQuantity });
+    dispatch(lessCandy(newQuantity));
   };
 };
 
@@ -60,10 +70,25 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, candies: action.candies, loading: false };
     }
     case GOT_SINGLE_CANDY: {
-      return { ...state, loading: false, selectedCandy: action.candy };
+      return { ...state, selectedCandy: action.candy };
     }
     case MORE_CANDY: {
-      return { ...state };
+      return {
+        ...state,
+        selectedCandy: {
+          ...state.selectedCandy,
+          quantity: +action.more,
+        },
+      };
+    }
+    case LESS_CANDY: {
+      return {
+        ...state,
+        selectedCandy: {
+          ...state.selectedCandy,
+          quantity: +action.less,
+        },
+      };
     }
     default:
       return state;
