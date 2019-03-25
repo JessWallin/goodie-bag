@@ -25,6 +25,23 @@ const Candy = db.define('candy', {
   },
 });
 
+Candy.beforeUpdate((candyInstance, options) => {
+  console.log('this.quantity');
+  if (candyInstance.quantity > 10) {
+    candyInstance.quantity = 10;
+    throw new Error("You can't have more than 10 of each candy!");
+  } else if (candyInstance.quantity < 0) {
+    candyInstance.quantity = 0;
+    throw new Error("You can't have negative candy!");
+  }
+});
+
+// Candy.beforeUpdate(candy => {
+//   if (candy.quantity > 10 || candy.quantity < 1) {
+//     throw new Error('Please pick a quantity between one and 10');
+//   }
+// });
+
 Candy.prototype.increment = function() {
   return this.increment('quantity');
 };

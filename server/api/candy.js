@@ -27,6 +27,7 @@ router.put('/:id', async (req, res, next) => {
       },
       {
         where: { id: req.params.id },
+        individualHooks: true,
         returning: true,
       }
     );
