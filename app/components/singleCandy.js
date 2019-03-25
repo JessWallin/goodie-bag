@@ -22,13 +22,25 @@ class SingleCandy extends React.Component {
           <p>Quantity: {this.props.selectedCandy.quantity} </p>
           <button
             type="button"
-            onClick={() => this.props.getMoreCandy(this.props.selectedCandy)}
+            onClick={() => {
+              if (this.props.selectedCandy.quantity === 10) {
+                alert("You can't have more than 10 of each candy!");
+              } else {
+                this.props.getMoreCandy(this.props.selectedCandy);
+              }
+            }}
           >
             Add More!
           </button>
           <button
             type="button"
-            onClick={() => this.props.takeLessCandy(this.props.selectedCandy)}
+            onClick={() => {
+              if (this.props.selectedCandy.quantity === 0) {
+                alert("You can't have negative candy!");
+              } else {
+                this.props.takeLessCandy(this.props.selectedCandy);
+              }
+            }}
           >
             Take Less!
           </button>
