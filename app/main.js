@@ -13,9 +13,11 @@ ReactDOM.render(
     <Router>
       <div>
         <Nav />
-        <Route exact path="/" component={Root} />
-        <Route exact path="/candies" component={CandyList} />
-        <Route path="/candies/:id" component={SingleCandy} />
+        <main>
+          <Route exact path="/" component={Root} />
+          <Route exact path="/candies" component={CandyList} />
+          <Route path="/candies/:id" component={SingleCandy} />
+        </main>
       </div>
     </Router>
   </Provider>,

@@ -8,9 +8,27 @@
   font-family: arial, sans-serif;
 }
 
+h1 {
+  font-family: pacifico, cursive;
+  color: plum;
+}
+
+p {
+  color: purple;
+  font: pacifico;
+}
+
+h4,
+h2,
+h3 {
+  font-family: Oswald;
+  color: purple;
+}
+
 body::after {
   content: '';
   background: url('bg.jpg');
+  background-repeat: repeat;
   opacity: 0.1;
   top: 0;
   left: 0;
@@ -22,7 +40,8 @@ body::after {
 
 nav {
   align-items: center;
-  background-color: #333333;
+  background-color: purple;
+  opacity: 0.5;
   color: #c0c0c0;
   display: flex;
   height: 80px;
@@ -48,4 +67,21 @@ main {
 
 .candyImage {
   width: 25%;
+}
+
+.content {
+  text-align: center;
+  margin: 0 auto;
+}
+
+button {
+  width: 100px;
+  margin: 5px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+
+button:hover {
+  border: 2px solid plum;
 }

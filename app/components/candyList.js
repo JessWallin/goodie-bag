@@ -11,13 +11,13 @@ class CandyList extends React.Component {
   render() {
     if (this.props.loading) {
       return (
-        <div>
+        <div className="content">
           <h1>LOADING ...</h1>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="content">
           <h1> Your Candies </h1>
           {this.props.candies.map(candy => (
             <IndividualCandy candy={candy} key={candy.id} />

@@ -15,7 +15,7 @@ class SingleCandy extends React.Component {
       return <p> L - O - A - D - I - N - G </p>;
     } else {
       return (
-        <div>
+        <div className="content">
           <img className="candyImage" src={this.props.selectedCandy.imageUrl} />
           <h1>{this.props.selectedCandy.name}</h1>
           <h4>{this.props.selectedCandy.description}</h4>

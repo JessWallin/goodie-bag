@@ -9,7 +9,6 @@ const IndividualCandies = props => {
         <img className="candyImage" src={props.candy.imageUrl} />
       </Link>
       <h2>{props.candy.name} </h2>
-      <p>Current Quantity:{props.candy.quantity} </p>
     </div>
   );
 };
