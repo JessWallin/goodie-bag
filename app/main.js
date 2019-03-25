@@ -13,7 +13,7 @@ ReactDOM.render(
     <Router>
       <div>
         <Nav />
-        <main>
+        <main className="fixed-bg">
           <Route exact path="/" component={Root} />
           <Route exact path="/candies" component={CandyList} />
           <Route path="/candies/:id" component={SingleCandy} />

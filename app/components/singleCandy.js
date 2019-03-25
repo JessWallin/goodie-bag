@@ -54,7 +54,6 @@ class SingleCandy extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   getSingleCandy: function(id) {
-    console.log('getSingleCandy');
     dispatch(getSingleCandy(id));
   },
   getMoreCandy: function(thisCandy) {
